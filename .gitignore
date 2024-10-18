@@ -1,0 +1,14 @@
+# Air configuration files
+air.toml
+
+# Temporary files
+tmp
+
+.DS_Store
+
+
+# Environment variables
+.env
+.env.local
+
+.vscode/
