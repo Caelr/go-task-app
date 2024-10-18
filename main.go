@@ -34,6 +34,10 @@ func main() {
 		if todo.Body == "" {
 			return c.Status(400).JSON(fiber.Map{"error": "Enter a task"})
 		}
+		todo.ID = len(todos) + 1
+		todos = append(todos, todo)
+
+		return c.Status(201).JSON(todo)
 	})
 
 	log.Fatal(app.Listen(":8080"))
