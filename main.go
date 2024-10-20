@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"log"
 	"os"
@@ -11,7 +12,7 @@ import (
 )
 
 type Todo struct {
-	ID        int    `json:"_id" bson: "_id"`
+	ID        int    `json:"_id" bson: "_id"` // FIX: Compatibility with  reflect.StructTag.Get:
 	Completed bool   `json:"completed"`
 	Body      string `json:"body"`
 }
@@ -27,4 +28,17 @@ func main() {
 	}
 	DB_URI := os.Getenv("DB_URI")
 	clientOption := options.Client().ApplyURI(DB_URI)
+	client, err := mongo.Connect(context.Background(), clientOption)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = client.Ping(context.Background(), nil)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("Connected to MongoDB ATLAS")
 }
