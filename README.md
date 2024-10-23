@@ -78,7 +78,7 @@ A simple task management application built with a Go backend using Fiber and a R
 |--------|----------------------|----------------------------|
 | GET    | `/api/v1/todos`      | Retrieve all tasks         |
 | POST   | `/api/v1/todos`      | Create a new task          |
-| PATCH    | `/api/v1/todos/:id`  | Update an existing task     |
+| PATCH  | `/api/v1/todos/:id`  | Update an existing task    |
 | DELETE | `/api/v1/todos/:id`  | Delete a task              |
 
 ## Contributing
