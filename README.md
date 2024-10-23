@@ -70,7 +70,7 @@ A simple task management application built with a Go backend using Fiber and a R
 ## Running the Application
 
 1. Make sure both the backend and frontend servers are running.
-2. Open your browser and navigate to `http://localhost:3000` (or the port specified by Vite) to access the application.
+2. Open your browser and navigate to `http://localhost:5173` (or the port specified by Vite) to access the application.
 
 ## API Endpoints
 
@@ -78,7 +78,7 @@ A simple task management application built with a Go backend using Fiber and a R
 |--------|----------------------|----------------------------|
 | GET    | `/api/v1/todos`      | Retrieve all tasks         |
 | POST   | `/api/v1/todos`      | Create a new task          |
-| PUT    | `/api/v1/todos/:id`  | Update an existing task     |
+| PATCH    | `/api/v1/todos/:id`  | Update an existing task     |
 | DELETE | `/api/v1/todos/:id`  | Delete a task              |
 
 ## Contributing
