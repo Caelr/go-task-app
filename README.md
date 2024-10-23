@@ -1,4 +1,3 @@
-I’m here to help! It seems there might have been a misunderstanding. Let’s get it right this time. Here’s the complete README content in a clean Markdown format:
 
 # Go Task App
 
@@ -34,55 +33,58 @@ A simple task management application built with a Go backend using Fiber and a R
 
 ### Backend Setup
 
-1. Clone the repository:
+1. Navigate to the root directory and install necessary Go dependencies:
 
    ```bash
-   git clone github.com/Caelr/go-task-app
-   cd go-task-app
+   go mod tidy
+   ```
 
-	2.	Navigate to the root directory and install necessary Go dependencies:
+2. Set up your MongoDB database. Make sure to have a running instance of MongoDB. Update the database connection string in the Go application configuration.
 
-go mod tidy
+3. Start the backend server using Air:
 
+   ```bash
+   air
+   ```
 
-	3.	Set up your MongoDB database. Make sure to have a running instance of MongoDB. Update the database connection string in the Go application configuration.
-	4.	Start the backend server using Air:
+### Frontend Setup
 
-air
+1. Navigate to the `client` directory:
 
+   ```bash
+   cd client
+   ```
 
+2. Install the frontend dependencies using Bun:
 
-Frontend Setup
+   ```bash
+   bun install
+   ```
 
-	1.	Navigate to the client directory:
+3. Start the frontend development server:
 
-cd client
+   ```bash
+   bun dev
+   ```
 
+## Running the Application
 
-	2.	Install the frontend dependencies using Bun:
+1. Make sure both the backend and frontend servers are running.
+2. Open your browser and navigate to `http://localhost:3000` (or the port specified by Vite) to access the application.
 
-bun install
+## API Endpoints
 
+| Method | Endpoint             | Description                |
+|--------|----------------------|----------------------------|
+| GET    | `/api/v1/todos`      | Retrieve all tasks         |
+| POST   | `/api/v1/todos`      | Create a new task          |
+| PUT    | `/api/v1/todos/:id`  | Update an existing task     |
+| DELETE | `/api/v1/todos/:id`  | Delete a task              |
 
-	3.	Start the frontend development server:
+## Contributing
 
-bun dev
+Contributions are welcome! Please feel free to submit a pull request or open an issue.
 
+## License
 
-
-Running the Application
-
-	1.	Make sure both the backend and frontend servers are running.
-	2.	Open your browser and navigate to http://localhost:3000 (or the port specified by Vite) to access the application.
-
-API Endpoints
-
-Method	Endpoint	Description
-GET	/api/v1/todos	Retrieve all tasks
-POST	/api/v1/todos	Create a new task
-PUT	/api/v1/todos/:id	Update an existing task
-DELETE	/api/v1/todos/:id	Delete a task
-
-
-
-
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
