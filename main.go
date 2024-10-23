@@ -23,8 +23,6 @@ type Todo struct {
 var collection *mongo.Collection
 
 func main() {
-	fmt.Println("Hello mongo")
-
 	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatal("Error loading .env file:", err)
@@ -109,7 +107,6 @@ func createTodo(c *fiber.Ctx) error {
 func updateTodo(c *fiber.Ctx) error {
 	id := c.Params("id")
 	objectID, err := primitive.ObjectIDFromHex(id)
-
 	if err != nil {
 		return c.Status(400).JSON(fiber.Map{"error": "Todo not found"})
 	}
@@ -117,7 +114,6 @@ func updateTodo(c *fiber.Ctx) error {
 	filter := bson.M{"_id": objectID}
 	update := bson.M{"$set": bson.M{"completed": true}}
 	_, err = collection.UpdateOne(context.Background(), filter, update)
-
 	if err != nil {
 		return err
 	}
@@ -133,7 +129,6 @@ func deleteTodo(c *fiber.Ctx) error {
 	}
 	filter := bson.M{"_id": objectID}
 	_, err = collection.DeleteOne(context.Background(), filter)
-
 	if err != nil {
 		return err
 	}
