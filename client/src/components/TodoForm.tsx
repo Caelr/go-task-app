@@ -1,5 +1,3 @@
-//STARTER CODE:
-
 import { Button, Flex, Input, Spinner } from '@chakra-ui/react'
 import { useState } from 'react'
 import { IoMdAdd } from 'react-icons/io'
